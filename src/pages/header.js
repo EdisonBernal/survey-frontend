@@ -21,7 +21,7 @@ function Header () {
         <NavDropdown.Item href="/usuarios">Mi perfil</NavDropdown.Item>
         </NavDropdown>
         <Nav.Link href="/encuestas">ENCUESTAS</Nav.Link>                     
-        </Nav>
+        </Nav>        
         <div className='logout'>        
         <a href="/">
         <img src={logout} width="40px" height="40px" alt="Cerrar sesión" onClick={cerrarSesion} />

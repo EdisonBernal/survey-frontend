@@ -20,11 +20,7 @@ function CrearUsuarios () {
           email: form.email.value,
           contrasena: form.contrasena.value}
     
-        axios.post(constantes.URL_SERVIDOR +'/usuarios', data, {
-          headers:{
-            Authorization: "Bearer " + localStorage.getItem('token')
-          }
-        })
+        axios.post(constantes.URL_SERVIDOR +'/usuarios', data)
         .then((response)=>{
           Swal.fire(
             'Guardado',

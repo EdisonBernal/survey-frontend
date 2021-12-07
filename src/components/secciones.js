@@ -16,7 +16,7 @@ function Secciones () {
 
   
   function getsecciones(){
-    return axios.get(constantes.URL_SERVIDOR+'/getSeccionId/' + getIdEncuesta, {
+    return axios.get(constantes.URL_SERVIDOR+'/getSeccionId/'+getIdEncuesta, {
       headers:{
         Authorization: "Bearer " + localStorage.getItem('token')
       }
@@ -99,7 +99,7 @@ function Secciones () {
       useEffect(() =>{
         getsecciones().then((response)=>{
           setSecciones(response.data)})
-       },);
+       },[setSecciones]);
 
     return(
 

@@ -31,7 +31,7 @@ function Login ()  {
                   timer: 1500
                 })
                 localStorage.setItem('token', response.data.token)                
-                history.push('/encuestas')
+                history.push('/usuarios')
                 setTimeout(() => {window.location.reload()}, 1500);             
                                              
               } else
