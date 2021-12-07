@@ -27,7 +27,7 @@ function CrearUsuarios () {
             `El registro ${data.nombres} ha sido guardado exitosamente`,
             'success'
           )
-          history.push('/usuarios')
+          history.push('/login')
         })
     }
 
