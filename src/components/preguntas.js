@@ -63,7 +63,7 @@ function Preguntas () {
     useEffect(() =>{
       getpreguntas().then((response)=>{
         setPreguntas(response.data)})    
-     }, [setPreguntas] );
+     }, );
 
      function eliminarPregunta (idPregunta) {
       axios.delete(constantes.URL_SERVIDOR +'/pregunta/'+idPregunta)
