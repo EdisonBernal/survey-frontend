@@ -99,7 +99,7 @@ function Secciones () {
       useEffect(() =>{
         getsecciones().then((response)=>{
           setSecciones(response.data)})
-       },[setSecciones]);
+       },);
 
     return(
 
