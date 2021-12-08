@@ -9,7 +9,13 @@ import constantes from '../constantes';
 import Image from 'react-bootstrap/Image'
 
 function Encuestas () {
-  
+  const history = useHistory();
+
+  if(constantes.isUser == null){
+    history.push('/login')
+      
+  }
+
   function getencuestas(){
     return axios.get(constantes.URL_SERVIDOR +'/encuesta', {
       headers:{
@@ -20,7 +26,7 @@ function Encuestas () {
 
     const [encuestas, setEncuestas] = useState([]);
     const [modalEditar, setModalEditar] = useState(false);
-    const history = useHistory();
+    
 
     const [encuestaSeleccionada, setEncuestaSeleccionada] = useState({
       idenc: '',
@@ -102,10 +108,11 @@ function Encuestas () {
 
       function crearEncuesta(){
         history.push('encuestas/Crear');
-      }
+    }
     
     
-    return(    
+    return( 
+         
     <Fragment>      
       <div className="table-general">
         <p>ADMINISTRACION DE ENCUESTAS</p>

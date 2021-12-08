@@ -9,10 +9,6 @@ import {useHistory, useParams} from 'react-router-dom';
 
 function Preguntas () {
 
-  const history = useHistory();
-  const {getIdSeccion} = useParams();
-
-
   function getpreguntas(){
     return axios.get(constantes.URL_SERVIDOR +'/pregunta/'+getIdSeccion, {
       headers:{
@@ -20,10 +16,12 @@ function Preguntas () {
       }
     });
   }
+
+  const history = useHistory();
+  const {getIdSeccion} = useParams();
   const [preguntas, setPreguntas] = useState([]);
   const [modalEditar, setModalEditar] = useState(false);
-
-
+ 
   const [preguntaSeleccionada, setPreguntaSeleccionada] = useState({
     idpreg: '',
     idsec: '',
@@ -45,7 +43,6 @@ function Preguntas () {
   }
 
   const editar = () => {
-    
       
         axios.put(`${constantes.URL_SERVIDOR +'/pregunta'}/${preguntaSeleccionada.idpreg}`, preguntaSeleccionada)
         .then((response)=>{
@@ -60,10 +57,11 @@ function Preguntas () {
         })
     };
 
-    useEffect(() =>{
+    useEffect(() => {
       getpreguntas().then((response)=>{
-        setPreguntas(response.data)})    
+        setPreguntas(response.data);})
      }, );
+ 
 
      function eliminarPregunta (idPregunta) {
       axios.delete(constantes.URL_SERVIDOR +'/pregunta/'+idPregunta)
